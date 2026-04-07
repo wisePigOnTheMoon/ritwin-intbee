@@ -1,0 +1,6 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="200" fill="white"/>
+  <text x="300" y="120" font-size="48" text-anchor="middle" font-family="Arial, sans-serif" fill="black">
+    (e^(3x))/3 + C
+  </text>
+</svg>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <h1>Problem Admin</h1>
+    <a href="/">Back to Controller</a>
+  </header>
+
+  <main class="admin-main">
+    <section class="admin-section">
+      <label class="admin-field-label">Competition Title</label>
+      <div class="admin-inline">
+        <input type="text" id="comp-title" class="admin-input" placeholder="Competition Title">
+        <button id="btn-save-title" class="admin-btn">Save Title</button>
+      </div>
+    </section>
+
+    <section class="admin-section">
+      <div id="rounds-container"></div>
+      <button id="btn-add-round" class="admin-btn admin-btn-primary">+ Add Round</button>
+    </section>
+  </main>
+
+  <!-- Modal overlay for add/edit problem -->
+  <div id="problem-modal" class="modal-overlay" hidden>
+    <div class="modal">
+      <h2 id="modal-title">Add Problem</h2>
+      <input type="hidden" id="modal-round-index">
+      <input type="hidden" id="modal-problem-index">
+
+      <label class="admin-field-label">Label</label>
+      <input type="text" id="modal-label" class="admin-input" placeholder="e.g. Quarterfinals #1">
+
+      <div class="modal-field">
+        <label class="admin-field-label">Problem</label>
+        <div class="tab-toggle">
+          <button class="tab-btn active" data-target="problem" data-tab="upload">Upload Image</button>
+          <button class="tab-btn" data-target="problem" data-tab="typst">Typst Source</button>
+        </div>
+        <div id="problem-upload-tab" class="tab-content">
+          <input type="file" id="problem-file" accept=".svg,.png,.jpg,.jpeg">
+        </div>
+        <div id="problem-typst-tab" class="tab-content" hidden>
+          <textarea id="problem-typst" class="admin-textarea" placeholder="$ integral x^2 dif x $"></textarea>
+          <button class="admin-btn preview-btn" data-field="problem">Preview</button>
+        </div>
+        <div id="problem-preview" class="svg-preview"></div>
+      </div>
+
+      <div class="modal-field">
+        <label class="admin-field-label">Answer</label>
+        <div class="tab-toggle">
+          <button class="tab-btn active" data-target="answer" data-tab="upload">Upload Image</button>
+          <button class="tab-btn" data-target="answer" data-tab="typst">Typst Source</button>
+        </div>
+        <div id="answer-upload-tab" class="tab-content">
+          <input type="file" id="answer-file" accept=".svg,.png,.jpg,.jpeg">
+        </div>
+        <div id="answer-typst-tab" class="tab-content" hidden>
+          <textarea id="answer-typst" class="admin-textarea" placeholder="$ 1/3 x^3 + C $"></textarea>
+          <button class="admin-btn preview-btn" data-field="answer">Preview</button>
+        </div>
+        <div id="answer-preview" class="svg-preview"></div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="btn-modal-save" class="admin-btn admin-btn-primary">Save</button>
+        <button id="btn-modal-cancel" class="admin-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

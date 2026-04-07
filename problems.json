@@ -1,0 +1,119 @@
+{
+  "title": "SMT 2026 Integration Bee",
+  "rounds": [
+    {
+      "name": "Sample",
+      "problems": [
+        {
+          "id": "sample-1",
+          "label": "Sample #1",
+          "problem": "problems/sample-1-problem.svg",
+          "answer": "problems/sample-1-answer.svg"
+        },
+        {
+          "id": "sample-2",
+          "label": "Sample #2",
+          "problem": "problems/sample-2-problem.svg",
+          "answer": "problems/sample-2-answer.svg"
+        }
+      ]
+    },
+    {
+      "name": "Quarterfinals",
+      "problems": [
+        {
+          "id": "qf-1",
+          "label": "Quarterfinals #1",
+          "problem": "problems/qf-1-problem.svg",
+          "answer": "problems/qf-1-answer.svg"
+        },
+        {
+          "id": "qf-2",
+          "label": "Quarterfinals #2",
+          "problem": "problems/qf-2-problem.svg",
+          "answer": "problems/qf-2-answer.svg"
+        },
+        {
+          "id": "qf-3",
+          "label": "Quarterfinals #3",
+          "problem": "problems/qf-3-problem.svg",
+          "answer": "problems/qf-3-answer.svg"
+        }
+      ]
+    },
+    {
+      "name": "Semifinals",
+      "problems": [
+        {
+          "id": "sf-1",
+          "label": "Semifinals #1",
+          "problem": "problems/sf-1-problem.svg",
+          "answer": "problems/sf-1-answer.svg"
+        },
+        {
+          "id": "sf-2",
+          "label": "Semifinals #2",
+          "problem": "problems/sf-2-problem.svg",
+          "answer": "problems/sf-2-answer.svg"
+        },
+        {
+          "id": "sf-3",
+          "label": "Semifinals #3",
+          "problem": "problems/sf-3-problem.svg",
+          "answer": "problems/sf-3-answer.svg"
+        }
+      ]
+    },
+    {
+      "name": "Finals",
+      "problems": [
+        {
+          "id": "finals-1",
+          "label": "Finals #1",
+          "problem": "problems/finals-1-problem.svg",
+          "answer": "problems/finals-1-answer.svg"
+        },
+        {
+          "id": "finals-2",
+          "label": "Finals #2",
+          "problem": "problems/finals-2-problem.svg",
+          "answer": "problems/finals-2-answer.svg"
+        },
+        {
+          "id": "finals-3",
+          "label": "Finals #3",
+          "problem": "problems/finals-3-problem.svg",
+          "answer": "problems/finals-3-answer.svg"
+        }
+      ]
+    },
+    {
+      "name": "Sudden Death",
+      "problems": [
+        {
+          "id": "sd-1",
+          "label": "Sudden Death #1",
+          "problem": "problems/sd-1-problem.svg",
+          "answer": "problems/sd-1-answer.svg"
+        },
+        {
+          "id": "sd-2",
+          "label": "Sudden Death #2",
+          "problem": "problems/sd-2-problem.svg",
+          "answer": "problems/sd-2-answer.svg"
+        }
+      ]
+    },
+    {
+      "name": "heehee",
+      "problems": [
+        {
+          "id": "heehee-1",
+          "label": "haha",
+          "problem": "problems/heehee-1-problem.svg",
+          "answer": "problems/heehee-1-answer.svg"
+        }
+      ]
+    }
+  ]
+}

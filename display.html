@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration Bee — Display</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="display-body">
+  <div id="display-container">
+    <!-- Title slide -->
+    <div id="slide-title" class="slide">
+      <div class="round-name" id="title-round-name"></div>
+    </div>
+
+    <!-- Problem slide -->
+    <div id="slide-problem" class="slide">
+      <div class="slide-header" id="problem-round-name"></div>
+      <div class="slide-content">
+        <img id="problem-img" src="" alt="Problem">
+      </div>
+    </div>
+
+    <!-- Answer slide -->
+    <div id="slide-answer" class="slide">
+      <div class="slide-header" id="answer-round-name"></div>
+      <div class="slide-content">
+        <div class="answer-label">Answer:</div>
+        <img id="answer-img" src="" alt="Answer">
+      </div>
+    </div>
+
+    <!-- Waiting state -->
+    <div id="slide-waiting" class="slide active">
+      <div class="round-name">Integration Bee</div>
+    </div>
+  </div>
+
+  <div id="display-footer">
+    <div id="display-scores">
+      <div class="display-player">
+        <span class="display-player-name" id="display-p1-name">Player 1</span>
+        <span class="display-player-score" id="display-p1-score">0</span>
+      </div>
+      <div class="display-timer" id="display-timer">3:00</div>
+      <div class="display-player">
+        <span class="display-player-name" id="display-p2-name">Player 2</span>
+        <span class="display-player-score" id="display-p2-score">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="display.js"></script>
+</body>
+</html>
