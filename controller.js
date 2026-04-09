@@ -77,7 +77,7 @@ function selectProblem(index) {
 function displayProblem() {
   if (selectedIndex < 0) return;
   displayedIndex = selectedIndex;
-  slidePhase = 1; // show the problem
+  slidePhase = 0; // show the title first
   sendSlide();
 }
 

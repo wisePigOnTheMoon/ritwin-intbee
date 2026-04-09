@@ -22,6 +22,33 @@
     </section>
 
     <section class="admin-section">
+      <label class="admin-field-label">Bulk Import from Typst</label>
+      <details class="import-details">
+        <summary class="admin-btn admin-btn-secondary">Import from File / Text</summary>
+        <div class="import-content">
+          <div class="import-format-hint">
+            Format: <code># Round Name</code> to start a round, then <code>problem typst | answer typst</code> per line.
+          </div>
+          <div class="admin-inline" style="margin-bottom: 8px;">
+            <input type="file" id="import-file" accept=".txt,.typ">
+            <span class="import-or">or paste below</span>
+          </div>
+          <textarea id="import-source" class="admin-textarea" rows="10" placeholder="# Quarterfinals
+$ integral x^2 dif x $ | $ 1/3 x^3 + C $
+$ integral sin(x) dif x $ | $ -cos(x) + C $
+
+# Semifinals
+$ integral e^x dif x $ | $ e^x + C $"></textarea>
+          <div class="import-actions">
+            <button id="btn-import" class="admin-btn admin-btn-primary">Import & Compile All</button>
+            <button id="btn-regenerate" class="admin-btn">Regenerate All Images</button>
+            <span id="import-status" class="import-status"></span>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="admin-section">
       <div id="rounds-container"></div>
       <button id="btn-add-round" class="admin-btn admin-btn-primary">+ Add Round</button>
     </section>

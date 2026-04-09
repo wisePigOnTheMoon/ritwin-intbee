@@ -283,5 +283,88 @@ document.getElementById('btn-modal-save').addEventListener('click', async () => 
   saveBtn.textContent = 'Save';
 });
 
+// ===== Import =====
+document.getElementById('import-file').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const text = await file.text();
+  document.getElementById('import-source').value = text;
+});
+
+document.getElementById('btn-import').addEventListener('click', async () => {
+  const source = document.getElementById('import-source').value;
+  if (!source.trim()) {
+    alert('Nothing to import. Paste text or select a file.');
+    return;
+  }
+  if (!confirm('This will add new rounds from the import. Continue?')) return;
+
+  const btn = document.getElementById('btn-import');
+  const status = document.getElementById('import-status');
+  btn.disabled = true;
+  btn.textContent = 'Compiling...';
+  status.textContent = 'This may take a while for many problems...';
+
+  try {
+    const res = await fetch('/api/import', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source }),
+    });
+    const result = await res.json();
+    if (result.error) {
+      alert(result.error);
+      status.textContent = '';
+    } else {
+      let msg = `Imported ${result.created} problems.`;
+      if (result.errors && result.errors.length > 0) {
+        msg += `\n\n${result.errors.length} errors:\n` + result.errors.join('\n');
+      }
+      alert(msg);
+      status.textContent = `Done — ${result.created} problems imported.`;
+      loadData();
+    }
+  } catch (e) {
+    alert('Import failed: ' + e.message);
+    status.textContent = '';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Import & Compile All';
+});
+
+document.getElementById('btn-regenerate').addEventListener('click', async () => {
+  if (!confirm('Regenerate all SVG images from stored Typst sources? (Only affects problems that were created with Typst.)')) return;
+
+  const btn = document.getElementById('btn-regenerate');
+  const status = document.getElementById('import-status');
+  btn.disabled = true;
+  btn.textContent = 'Regenerating...';
+  status.textContent = 'Recompiling all Typst sources...';
+
+  try {
+    const res = await fetch('/api/regenerate', { method: 'POST' });
+    const result = await res.json();
+    if (result.error) {
+      alert(result.error);
+      status.textContent = '';
+    } else {
+      let msg = `Regenerated ${result.regenerated} images.`;
+      if (result.errors && result.errors.length > 0) {
+        msg += `\n\n${result.errors.length} errors:\n` + result.errors.join('\n');
+      }
+      alert(msg);
+      status.textContent = `Done — ${result.regenerated} images regenerated.`;
+      loadData();
+    }
+  } catch (e) {
+    alert('Regenerate failed: ' + e.message);
+    status.textContent = '';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Regenerate All Images';
+});
+
 // ===== Init =====
 loadData();
